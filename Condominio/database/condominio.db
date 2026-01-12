@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    rol TEXT NOT NULL CHECK(rol IN ('ADMIN','SUPERVISOR'))
+);
+
+CREATE TABLE IF NOT EXISTS productos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL,
+    descripcion TEXT,
+    precio REAL NOT NULL,
+    stock INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS ventas (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    producto_id INTEGER,
+    cantidad INTEGER,
+    fecha TEXT,
+    FOREIGN KEY(producto_id) REFERENCES productos(id)
+);
+
+INSERT INTO usuarios(username,password,rol) VALUES('admin','123','ADMIN');
+INSERT INTO usuarios(username,password,rol) VALUES('supervisor','123','SUPERVISOR');

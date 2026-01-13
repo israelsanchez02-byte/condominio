@@ -77,7 +77,7 @@ REQUISITOS DEL SISTEMA
 INSTALACIÓN Y EJECUCIÓN
 
 1. Clonar el repositorio
-   git clone [https://github.com/tu-usuario/tu-repositorio.git](https://github.com/tu-usuario/tu-repositorio.git)
+   git clone gh repo clone israelsanchez02-byte/condominio
 
 2. Abrir el proyecto en Visual Studio Code
 
